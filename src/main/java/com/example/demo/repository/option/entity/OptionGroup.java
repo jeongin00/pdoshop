@@ -1,6 +1,9 @@
-package com.example.demo.repository.product.entity;
+package com.example.demo.repository.option.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,23 +13,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class BaseProduct {
+public class OptionGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
     private String name;
-    private Integer price;
 
-    public static BaseProduct create(String name, Integer price){
-        return new BaseProduct(
+    public static OptionGroup create(String name){
+        return new OptionGroup(
                 null,
-                name,
-                price
+                name
         );
     }
-
-
 
 }
